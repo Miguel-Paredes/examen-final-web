@@ -34,7 +34,7 @@ function App() {
             <Route path='recuperar-password/:token' element={<Restablecer/>}/>
             <Route path='*' element={<NotFound />} />
           </Route>
-
+          <Route path='dashboard/*' element={
           <PrivateRoute>
             <Routes>
               <Route element={<Dashboard />}>
@@ -46,7 +46,7 @@ function App() {
               </Route>
             </Routes>
           </PrivateRoute>
-
+} />
 
 
 
