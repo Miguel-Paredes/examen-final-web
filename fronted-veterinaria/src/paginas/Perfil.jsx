@@ -1,3 +1,4 @@
+import Password from '../componets/Perfil/Password'
 import React from 'react'
 import { CardPerfil } from '../componets/Perfil/CardPerfil'
 import FormularioPerfil from '../componets/Perfil/FormularioPerfil'
@@ -17,6 +18,7 @@ const Perfil = () => {
                 </div>
                 <div className='w-full md:w-1/2'>
                     <CardPerfil/>
+                    <Password/>
                 </div>
             </div>
         </>
