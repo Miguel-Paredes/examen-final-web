@@ -1,9 +1,13 @@
 import { useParams } from 'react-router-dom';
-import { useEffect, useState } from 'react';
+import { useContext, useEffect, useState  } from 'react';
 import axios from 'axios';
 import Mensaje from '../componets/Alertas/Mensaje';
+import ModalTratamiento from '../componets/Modals/ModalTratamiento';
+import TratamientosContext from '../context/TratamientosProvider';
+
 
 const Visualizar = () => {
+    const {modal, handleModal} = useContext(TratamientosContext)
     const { id } = useParams()
     const [paciente, setPaciente] = useState({})
     const [mensaje, setMensaje] = useState({})
@@ -82,7 +86,11 @@ const Visualizar = () => {
                                 </div>
                             </div>
                             <hr className='my-4' />
-                            <p className='mb-8'>Este submódulo te permite visualizar los tratamientos del paciente</p>
+                            <div className='flex justify-between items-center'>
+                                <p>Este submódulo te permite visualizar los tratamientos del paciente</p>
+                                <button className="px-5 py-2 bg-green-800 text-white rounded-lg hover:bg-green-700" onClick={handleModal}>Registrar</button>
+                            </div>
+                            {modal  && (<ModalTratamiento idPaciente={paciente._id}/>)}
                             </>
                         )
                         :
