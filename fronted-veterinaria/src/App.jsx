@@ -21,10 +21,10 @@ import { TratamientosProvider } from './context/TratamientosProvider'
 function App() {
   return (
     <>
-    <AuthProvider>
-    <TratamientosProvider>
-      <BrowserRouter>
-        <Routes>
+    <BrowserRouter>
+      <AuthProvider>
+        <TratamientosProvider>
+          <Routes>
           
           <Route path='/' element={<Auth/>}>
           <Route index element={<LandinPage/>}/>
@@ -51,10 +51,10 @@ function App() {
 
 
 
-        </Routes>
-      </BrowserRouter>
-      </TratamientosProvider>
-    </AuthProvider>
+          </Routes>
+        </TratamientosProvider>
+      </AuthProvider>
+    </BrowserRouter>
     </>
   )
 }

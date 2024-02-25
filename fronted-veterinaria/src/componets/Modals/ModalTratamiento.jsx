@@ -1,13 +1,32 @@
-import { useContext } from "react"
+import { useContext, useState  } from "react"
 import TratamientosContext from "../../context/TratamientosProvider"
 
 const ModalTratamiento = ({ idPaciente }) => {
-    const {handleModal} = useContext(TratamientosContext)
+    const {setModal, handleModal,registrarTratamientos} = useContext(TratamientosContext)
+
+    const [form, setform] = useState({
+        nombre: "",
+        descripcion: "",
+        prioridad: "",
+        paciente:idPaciente
+    })
+
+    const handleChange = (e) => {
+        setform({...form,
+            [e.target.name]:e.target.value
+        })
+    }
+
+    const handleSubmit = async (e) => {
+        e.preventDefault()
+        registrarTratamientos(form)
+        setModal(false)
+    }
 
     return (
         <div className="lg:w-2/4 lg:h-3/5 bg-gray-800 bg-opacity-100 top-1/4 left-1/3 fixed sticky-0 rounded-lg overflow-y-scroll ">
             <p className='text-white uppercase font-bold text-lg text-center mt-4'>Tratamientos</p>
-            <form className='p-10'>
+            <form className='p-10' onSubmit={handleSubmit}>
                 <div>
                     <label
                         htmlFor='nombre:'
@@ -18,6 +37,8 @@ const ModalTratamiento = ({ idPaciente }) => {
                         className='border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md mb-5'
                         placeholder='nombre del tratamiento'
                         name='nombre'
+                        value={form.nombre}
+                        onChange={handleChange}
                     />
                 </div>
                 <div>
@@ -30,6 +51,8 @@ const ModalTratamiento = ({ idPaciente }) => {
                     className='border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md mb-5'
                     placeholder='Descripción del tratamiento'
                     name='descripcion'
+                    value={form.descripcion}
+                    onChange={handleChange}
                 />
                 </div>
 
@@ -39,7 +62,10 @@ const ModalTratamiento = ({ idPaciente }) => {
                     className='text-white uppercase font-bold text-sm'>Prioridad: </label>
                     <select
                         id='prioridad'
-                        className='border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md mb-5'>
+                        className='border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md mb-5'
+                        name='prioridad'
+                        value={form.prioridad}
+                        onChange={handleChange}>
                         <option value="">--- Seleccionar ---</option>
                         <option value="Baja">Baja</option>
                         <option value="Media">Media</option>
@@ -56,6 +82,7 @@ const ModalTratamiento = ({ idPaciente }) => {
                         value={idPaciente}
                         className='border-2 w-full p-2 mt-2 placeholder-gray-200 bg-slate-300 rounded-md mb-5'
                         name='paciente'
+                        // onChange={handleChange}
                     />
                 </div>
                 <div className='flex justify-center gap-5'>
