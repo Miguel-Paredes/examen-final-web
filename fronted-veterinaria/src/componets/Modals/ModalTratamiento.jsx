@@ -1,9 +1,7 @@
 import { useContext, useState  } from "react"
 import TratamientosContext from "../../context/TratamientosProvider"
-
 const ModalTratamiento = ({ idPaciente }) => {
     const {setModal, handleModal,registrarTratamientos} = useContext(TratamientosContext)
-
     const [form, setform] = useState({
         nombre: "",
         descripcion: "",
@@ -22,7 +20,6 @@ const ModalTratamiento = ({ idPaciente }) => {
         registrarTratamientos(form)
         setModal(false)
     }
-
     return (
         <div className="lg:w-2/4 lg:h-3/5 bg-gray-800 bg-opacity-100 top-1/4 left-1/3 fixed sticky-0 rounded-lg overflow-y-scroll ">
             <p className='text-white uppercase font-bold text-lg text-center mt-4'>Tratamientos</p>
@@ -79,10 +76,10 @@ const ModalTratamiento = ({ idPaciente }) => {
                     <input
                         type="text"
                         disabled
-                        value={idPaciente}
+                        value={form.paciente}
                         className='border-2 w-full p-2 mt-2 placeholder-gray-200 bg-slate-300 rounded-md mb-5'
                         name='paciente'
-                        // onChange={handleChange}
+                        onChange={handleChange}
                     />
                 </div>
                 <div className='flex justify-center gap-5'>
@@ -91,7 +88,8 @@ const ModalTratamiento = ({ idPaciente }) => {
                     className='bg-green-700 px-6 
                     text-slate-300 rounded-lg 
                     hover:bg-green-900 cursor-pointer'
-                    value='Registrar' />
+                    value='Registrar' 
+                    onChange={handleChange}/>
 
                     <button className="sm:w-auto leading-3 text-center text-white px-6 py-4 rounded-lg bg-red-700 hover:bg-red-900" onClick={handleModal}>Cancelar</button>
                 </div>
