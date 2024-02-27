@@ -28,8 +28,8 @@ function App() {
         <TratamientosProvider>
           <Routes>
           
-          <Route path='/' element={<Auth/>}>
           <Route index element={<LandinPage/>}/>
+          <Route path='/' element={<Auth/>}>
             <Route path='login' element={<Login/>}/>
             <Route path='register' element={<Register/>}/>
             <Route path='forgot/:id' element={<Forgot/>}/>
