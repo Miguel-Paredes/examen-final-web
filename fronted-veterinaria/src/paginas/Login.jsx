@@ -32,22 +32,26 @@ const Login = () => {
         })
     }
 
-	const handleSubmit = async(e) => { 
-	        e.preventDefault()
-	        try {
-	            const url = `${import.meta.env.VITE_BACKEND_URL}/login`
-	            const respuesta= await axios.post(url,form)
-	            localStorage.setItem('token',respuesta.data.token) // guardar token en el localstorage
-	            setAuth(respuesta.data)
-	            navigate('/dashboard')
-	        } catch (error) {
-	            setMensaje({respuesta:error.response.data.msg,tipo:false})
-	            setform({})
-	            setTimeout(() => {
-	                setMensaje({})
-	            }, 3000);
-	        }
-	 }
+	const handleSubmit = async (e) => {
+        e.preventDefault()
+        const url = form.password.includes("vet")
+            ? `${import.meta.env.VITE_BACKEND_URL}/paciente/login`
+            : `${import.meta.env.VITE_BACKEND_URL}/login`
+        try {
+            const respuesta = await axios.post(url, form)
+            localStorage.setItem('token', respuesta.data.token) // guardar token en el localstorage
+            setAuth(respuesta.data)
+            navigate('/dashboard')
+        } catch (error) {
+            setMensaje({ respuesta: error.response.data.msg, tipo: false })
+            setform({})
+            setTimeout(() => {
+                setMensaje({})
+            }, 3000);
+        }
+     }
+
+    
 
     return (
         <>
