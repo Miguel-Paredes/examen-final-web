@@ -4,7 +4,7 @@ const Chat = () => {
     const [mensaje, setMensaje] = useState("")
     const [socket, setSocket] = useState(null);
     useEffect(() => {
-        const newSocket = io('http://localhost:3000')
+        const newSocket = io(process.env.VITE_BACKEND_URL)
         setSocket(newSocket)
         return () => {
             newSocket.disconnect();
