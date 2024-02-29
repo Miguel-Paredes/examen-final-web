@@ -23,8 +23,5 @@ io.on('connection', (socket) => {
 
 
 server.listen(app.get('port'),()=>{
-    console.log(`Server ok on http://localhost:${app.get('port')}`);
+    console.log(`Server ok on ${process.env.VITE_BACKEND_URL}`);
 })
-// app.listen(app.get('port'),()=>{
-//     console.log(`Server ok on http://localhost:${app.get('port')}`);
-// })
