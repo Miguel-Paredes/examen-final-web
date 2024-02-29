@@ -74,8 +74,7 @@ const TratamientosProvider = ({ children }) => {
             }
         }
         catch (error) {
-            console.log(error)
-            // setMensaje({ respuesta: response?.data?.msg, tipo: false })
+            setMensaje({ respuesta: response?.data?.msg, tipo: false })
         }
     }
 
