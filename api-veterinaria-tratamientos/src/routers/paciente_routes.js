@@ -19,7 +19,7 @@ router.post('/paciente/login',loginPaciente)
 router.get('/paciente/perfil',verificarAutenticacion,perfilPaciente)
 router.get("/pacientes",verificarAutenticacion,listarPacientes);
 router.get("/paciente/:id",verificarAutenticacion, detallePaciente);
-router.post("/paciente/registro", verificarAutenticacion,registrarPaciente);
+router.put("/paciente/registro", verificarAutenticacion,registrarPaciente);
 router.put("/paciente/actualizar/:id", verificarAutenticacion,actualizarPaciente);
 router.delete("/paciente/eliminar/:id", verificarAutenticacion,eliminarPaciente);
 
