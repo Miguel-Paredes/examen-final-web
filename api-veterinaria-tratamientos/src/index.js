@@ -9,7 +9,7 @@ connection()
 const server = http.createServer(app);
 const io = new Server(server, {
     cors: {
-        origin: "https://examen-veterinaria.netlify.app/"
+        origin: process.env.URL_FRONTEND
     }
 })
 
