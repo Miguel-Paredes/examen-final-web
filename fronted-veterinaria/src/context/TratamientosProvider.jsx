@@ -64,7 +64,7 @@ const TratamientosProvider = ({ children }) => {
                         Authorization: `Bearer ${token}`
                     }
                 }
-                const response= await axios.put(url,{},options);
+                const response= await axios.post(url,{},options);
                 const tratamientosActualizados = tratamientos.filter(tratamiento => tratamiento._id !== id)
                 setTratamientos(tratamientosActualizados)
                 setMensaje({ respuesta: response.data?.msg, tipo: false })
