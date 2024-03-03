@@ -26,7 +26,7 @@ router.delete('/tratamiento/:id',verificarAutenticacion,eliminarTratamiento)
 
 
 // Ruta para cambiar el estado del tratamiento
-router.put('/tratamiento/estado/:id',verificarAutenticacion,cambiarEstado)
+router.post('/tratamiento/estado/:id',verificarAutenticacion,cambiarEstado)
 
 
 
