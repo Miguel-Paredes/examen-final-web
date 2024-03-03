@@ -36,6 +36,7 @@ const Dashboard = () => {
                     <li className="text-center">
                         <Link to='/dashboard/crear' className={`${urlActual === '/dashboard/crear' ? 'text-slate-100 bg-gray-900 px-3 py-2 rounded-md text-center' : 'text-slate-600'} text-xl block mt-2 hover:text-slate-600`}>Crear</Link>
                     </li>
+                    
                 </ul>
 
             </div>

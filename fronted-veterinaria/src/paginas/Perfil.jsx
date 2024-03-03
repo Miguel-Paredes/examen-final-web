@@ -8,6 +8,7 @@ import { useContext } from 'react'
 
 const Perfil = () => {
     const auth = useContext(AuthContext)
+    console.log(auth.auth.propietario )
     return (
         <>       
             <div>
