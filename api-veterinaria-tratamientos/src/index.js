@@ -9,7 +9,7 @@ connection()
 const server = http.createServer(app);
 const io = new Server(server, {
     cors: {
-        origin: process.env.URL_FRONTEND
+        origin: "http://localhost:5173"
     }
 })
 
@@ -25,3 +25,6 @@ io.on('connection', (socket) => {
 server.listen(app.get('port'),()=>{
     console.log(`Server ok on http://localhost:${app.get('port')}`);
 })
+// app.listen(app.get('port'),()=>{
+//     console.log(`Server ok on http://localhost:${app.get('port')}`);
+// })
