@@ -26,7 +26,7 @@ export const Register = () => {
         e.preventDefault()
         try {
             const url = `${import.meta.env.VITE_BACKEND_URL}/registro`
-            const respuesta = await axios.put(url,form)
+            const respuesta = await axios.post(url,form)
             setMensaje({respuesta:respuesta.data.msg,tipo:true})
             setform({})
         } catch (error) {
