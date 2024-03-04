@@ -43,4 +43,5 @@ k6.exe run --out web-dashboar script.js
 > [!NOTE]
 >
 > Este reporte se ejecuta en http://127.0.0.1:5665
+![image](https://github.com/Miguel-Paredes/examen-final-web/assets/117741739/18936351-abf4-45ec-9a30-f5f71cb03cd2)
 
