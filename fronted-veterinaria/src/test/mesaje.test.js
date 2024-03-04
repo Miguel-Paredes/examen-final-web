@@ -25,11 +25,5 @@ describe('Mensaje', () => {
         expect(getByTextError('Este es un mensaje de error')).toBeInTheDocument();
     });
 
-    // test('muestra correctamente el icono', () => {
-    //     const { getByTestId } = render(<Mensaje tipo={true}>Este es un mensaje de éxito</Mensaje>);
-    //     expect(getByTestId('icono')).toHaveClass('text-green-500');
 
-    //     const { getByTestId: getByTestIdError } = render(<Mensaje tipo={false}>Este es un mensaje de error</Mensaje>);
-    //     expect(getByTestIdError('icono')).toHaveClass('text-red-500');
-    // });
 });
