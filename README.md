@@ -7,6 +7,13 @@
 * Juan Gualotuña
 * Miguel Paredes
 
+## Links de la documentación
+https://app.swaggerhub.com/apis/JAREDVALENZUELAJVS02/ApiVeterinaria/3.0.3
+![image](https://github.com/Miguel-Paredes/examen-final-web/assets/126533404/d7cbbcfa-6dc5-4332-8a2b-584a2548401e)
+
+https://65e612547cb5a21c08ee3b90--ornate-youtiao-01c2e7.netlify.app/
+![image](https://github.com/Miguel-Paredes/examen-final-web/assets/126533404/8c441526-e83f-4cef-9590-02f24a5e3979)
+
 ## Prueba de Componentes
 ### Mensaje de Confirmación:
 ![image](https://github.com/Miguel-Paredes/examen-final-web/assets/117741739/63ac09d8-f0ee-4b18-b3b9-65b223578a22)
