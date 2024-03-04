@@ -25,5 +25,5 @@ describe('Mensaje', () => {
         expect(getByTextError('Este es un mensaje de error')).toBeInTheDocument();
     });
 
-
+        
 });
