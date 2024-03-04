@@ -1,5 +1,7 @@
 import { browser } from 'k6/experimental/browser';
+import { puppeteer } from 'k6/x';
 
+const authToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1ZTUxOGQxZDc2Zjg2NzA0ZjgxNWUzNiIsInJvbCI6InZldGVyaW5hcmlvIiwiaWF0IjoxNzA5NTMwNDM1LCJleHAiOjE3MDk2MTY4MzV9.piZNQ9f7qHA5SdFmF85WGKGtf3baTbd6Gk8bunEQLeQ';
 export const options = {
   scenarios: {
     ui: {
@@ -15,8 +17,9 @@ export const options = {
 }
 
 export default async function () {
+  
   const page = browser.newPage();
-
+  const browser = puppeteer.launch();
   try {
     await page.goto('https://examen-veterinaria.netlify.app');
     page.screenshot({ path: 'screenshots/screenshot.png' });
@@ -24,7 +27,7 @@ export default async function () {
     page.close();
   }
   try {
-    await page.goto('https://examen-veterinaria.netlify.app');
+    await page.goto('https://examen-veterinaria.netlify.app/login');
 
     page.locator('input[name="email"]').type('24heyerunsu@gmail.com');
     page.locator('input[name="password"]').type('@1234H');
@@ -38,6 +41,9 @@ export default async function () {
   }
   try {
     await page.goto('https://examen-veterinaria.netlify.app/dashboard');
+
+    const cookies = [{ name: 'Authorization', value: `Bearer ${authToken}` }];
+    page.setCookies(cookies);
 
     page.locator('input[name="nombre"]').type('Orlando');
     page.locator('input[name="apellido"]').type('Tomalá');
