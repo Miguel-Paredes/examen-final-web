@@ -89,7 +89,7 @@ const ModalTratamiento = ({ idPaciente }) => {
                     text-slate-300 rounded-lg 
                     hover:bg-green-900 cursor-pointer'
                     value='Registrar' 
-                    />
+                    onChange={handleChange}/>
 
                     <button className="sm:w-auto leading-3 text-center text-white px-6 py-4 rounded-lg bg-red-700 hover:bg-red-900" onClick={handleModal}>Cancelar</button>
                 </div>
