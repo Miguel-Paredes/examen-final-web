@@ -29,7 +29,7 @@ router.post("/login", login);
 
 
 
-router.put("/registro", validacionVeterinario , registro);
+router.post("/registro", validacionVeterinario , registro);
 
 
 router.get("/confirmar/:token", confirmEmail);

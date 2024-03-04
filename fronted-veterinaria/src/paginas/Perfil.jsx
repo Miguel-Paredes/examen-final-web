@@ -8,7 +8,6 @@ import { useContext } from 'react'
 
 const Perfil = () => {
     const auth = useContext(AuthContext)
-    console.log(auth.auth.propietario )
     return (
         <>       
             <div>
@@ -18,7 +17,7 @@ const Perfil = () => {
             </div>
 
             {
-                "propietario" in auth.auth 
+                "propietario" in auth.auth
                     ? (<CardPerfilPaciente/>)
                     : (
                         <div className='flex justify-around gap-x-8 flex-wrap gap-y-8 md:flex-nowrap'>

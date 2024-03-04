@@ -72,13 +72,13 @@ const listarPacientes = async (req,res)=>{
         res.status(200).json(pacientes)
     }
     else{
-        // Obtener todos los pacientes que se enceuntren activos
-        // Que sean solo los del paciente que inicie sesión
-        // Quitar campos no necesarios 
-        // Mostrar campos de documentos relacionados
-        const pacientes = await Paciente.find({estado:true}).where('veterinario').equals(req.veterinarioBDD).select("-salida -createdAt -updatedAt -__v").populate('veterinario','_id nombre apellido')
-        // Respuesta 
-        res.status(200).json(pacientes)
+    // Obtener todos los pacientes que se enceuntren activos
+    // Que sean solo los del paciente que inicie sesión
+    // Quitar campos no necesarios 
+    // Mostrar campos de documentos relacionados
+    const pacientes = await Paciente.find({estado:true}).where('veterinario').equals(req.veterinarioBDD).select("-salida -createdAt -updatedAt -__v").populate('veterinario','_id nombre apellido')
+    // Respuesta 
+    res.status(200).json(pacientes)
     }
 }
 
