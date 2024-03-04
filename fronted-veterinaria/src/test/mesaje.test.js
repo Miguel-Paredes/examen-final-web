@@ -4,7 +4,7 @@ import '@testing-library/jest-dom';
 import Mensaje from "../componets/Alertas/Mensaje";
 
 describe('Mensaje', () => {
-    test('renderiza correctamente', () => {
+    test('renderiza correctamente el contenido', () => {
         render(<Mensaje tipo={true}>Este es un mensaje de éxito</Mensaje>);
         render(<Mensaje tipo={false}>Este es un mensaje de error</Mensaje>);
     });
