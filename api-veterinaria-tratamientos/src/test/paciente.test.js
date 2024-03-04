@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
-import Paciente from "../models/Paciente.js"; // Asegúrate de que la ruta sea correcta
-import Veterinario from "../models/Veterinario.js"; // Asegúrate de que la ruta sea correcta
+import Paciente from "../models/Paciente.js";
+import Veterinario from "../models/Veterinario.js"; 
 
 import {
     listarPacientes,
